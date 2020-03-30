@@ -181,7 +181,29 @@ gacutil -u ClassLibrary,Version=1.0.0.0,PublicKeyToken=eeaabf36d7783129
 **2.**  .NET searches GAC (Global Assembly Cache) : .NET searches GAC only if the assembly is strongly named.  
 **3.**  If the assembly is not found in the GAC, and if there is a .config file, then .NET searches the location in the cofiguration file, else .NET searches directory containing the executable (.EXE)  
 **4.**  If the assembly is not found,  the application terminates with error.
+
+## DLL Hell
+Let us try and understand DLL HELL problem with an example. Please refer to the image below.  [If you want to know how dll hell problem is solved in .net, you can read this article.](http://venkataspinterview.blogspot.com/2011/06/how-is-dll-hell-problem-solved-in-net.html)  
+  
+
+![](http://1.bp.blogspot.com/-GdfFIGaLmQs/TeU4FcNPW6I/AAAAAAAAAGk/lPEo1eZNHm0/s1600/DllHell.png)
+
+  
+  
+**1.**  I have 2 applications, A1 and A2 installed on my computer.  
+  
+**2.**  Both of these applications use shared assembly shared.dll  
+  
+**3.**  Now, I have a latest version of Application - A2 available on the internet.  
+  
+**4.**  I download the latest version of A2 and install it on my machine.  
+  
+**5.**  This new installation has over written Shared.dll, which is also used by Application - A1.  
+  
+**6.**  Application - A2 works fine, but A1 fails to work, because the newly installed Shared.dll is not backward compatible.  
+  
+So, DLL HELL is a problem where one application will install a new version of the shared component that is not backward compatible with the version already on the machine, causing all the other existing applications that rely on the shared component to break. With .NET versioning we donot have DLL HELL problem any more.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2MTE5MjE3NCwyMzU5Mzk2MTYsLTE3MT
-A2MzI0NjFdfQ==
+eyJoaXN0b3J5IjpbLTM5MzcyOTU2MiwtODYxMTkyMTc0LDIzNT
+kzOTYxNiwtMTcxMDYzMjQ2MV19
 -->
