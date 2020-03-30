@@ -90,6 +90,8 @@ We use ILASM.exe (Intermediate Language Assembler) to reconstruct an assembly fr
 
 ## Strong naming an assembly
 
+(https://www.youtube.com/watch?v=p6u7n_BPcVw&list=PL8598C97BA1D871C1&index=3)
+
 **Strong naming an assembly or Signing an assembly with strong name.**  
   
   
@@ -141,19 +143,13 @@ If the assembly is not signed with private/public key pair, the assembly is weak
 
 ## What is GAC. How and when to install an assembly into GAC 
 
+(https://www.youtube.com/watch?v=FYmRrEYyhCM&list=PL8598C97BA1D871C1&index=4)
 
 **GAC**  stands for  **Global Assembly Cache**  and contains strong named assemblies. Assemblies in the GAC can be shared by all applications running on that machine, without having to copy the assembly locally. It is recommended to install an assembly into GAC, only when required and shared by applications, otherwise they should be kept private.  You shouldn't add an assembly into the GAC, if you wish to deploy your application to another machine using XCopy deployment.  This is because in XCopy deployment, we only copy the application files to the target machine and not the GAC contents. XCopy deployment is simply copying files from one location to another.
 
-  
-  
-  
-  
 With the introduction of .NET 4.0, we have 2 GAC's. One for DotNet 2.0 to 3.5 assemblies and the other for .NET 4.0 assemblies. The following are the paths for the 2 GAC's  
 **1.**  C:\Windows\Assembly - For .NET 2.0 - 3.5 assemblies  
 **2.**  C:\WINDOWS\Microsoft.NET\assembly - For .NET 4.0 assemblies
-
-  
-  
   
 To install an assembly into the GAC, the assembly must be strongly named, otherwise you get an error stating -  Failure adding assembly to the cache: Attempt to install an assembly without a strong name. There are 2 ways to install an assembly into GAC.  
 **1.**  Simply Drag and Drop  
@@ -210,7 +206,9 @@ Let us try and understand DLL HELL problem with an example. Please refer to the 
 **6.**  Application - A2 works fine, but A1 fails to work, because the newly installed Shared.dll is not backward compatible.  
   
 So, DLL HELL is a problem where one application will install a new version of the shared component that is not backward compatible with the version already on the machine, causing all the other existing applications that rely on the shared component to break. With .NET versioning we donot have DLL HELL problem any more.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODE4NTQwNzA0LC04NjExOTIxNzQsMjM1OT
-M5NjE2LC0xNzEwNjMyNDYxXX0=
+eyJoaXN0b3J5IjpbMjExNDQyNjM5MywtODYxMTkyMTc0LDIzNT
+kzOTYxNiwtMTcxMDYzMjQ2MV19
 -->
