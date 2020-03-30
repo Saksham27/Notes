@@ -171,6 +171,15 @@ gacutil -u ClassLibrary,Version=1.0.0.0,PublicKeyToken=eeaabf36d7783129
   
   
 **Note:**  Please make sure there are no spaces between Comma(,) and the words "Version" and PublicKeyToken, otherwise you get an error stating  Unknown option: Version=1.0.0.0.  Also, don't specify the assembly extension (.dll or .exe) when uninstalling, otherwise the assembly will not be uninstalled. You will just get a message stating  Number of assemblies uninstalled = 0
+
+### How .NET finds the assemblies during program execution - Part 5
+
+Video Explanation
+  
+**1.**  .NET figures out what version is needed : Usually the information about the dependant assemblies is present in the application's assembly manifest. CLR checks the application configuration file, publisher policy file(if exists), and machine config file for information that overrides the version information stored in the calling assembly's manifest.  
+**2.**  .NET searches GAC (Global Assembly Cache) : .NET searches GAC only if the assembly is strongly named.  
+**3.**  If the assembly is not found in the GAC, and if there is a .config file, then .NET searches the location in the cofiguration file, else .NET searches directory containing the executable (.EXE)  
+**4.**  If the assembly is not found,  the application terminates with error.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTA2MzI0NjFdfQ==
+eyJoaXN0b3J5IjpbMjM1OTM5NjE2LC0xNzEwNjMyNDYxXX0=
 -->
