@@ -39,7 +39,7 @@ The native code is not stored permanently anywhere, after we close the program t
 
 ## ILDASM and ILASM 
 
-(https://www.youtube.com/watch?v=D_1Op4TBM-Y&list=PL8598C97BA1D871C1&index=2)
+[Video Explanation](https://www.youtube.com/watch?v=D_1Op4TBM-Y&list=PL8598C97BA1D871C1&index=2)
 
 From Part 1 of DotNet basics videos, we understood that, compiling any .NET application would produce an assembly. Assemblies have an extension of .DLL or .EXE. For example if you compile a windows or Console application, you get a .EXE, where as when we compile a web or Class library project we get a .DLL.  [Please watch Part 1, if you haven't done so already.](http://csharp-video-tutorials.blogspot.com/2012/07/net-program-execution-part-1.html)
 
@@ -90,7 +90,7 @@ We use ILASM.exe (Intermediate Language Assembler) to reconstruct an assembly fr
 
 ## Strong naming an assembly
 
-(https://www.youtube.com/watch?v=p6u7n_BPcVw&list=PL8598C97BA1D871C1&index=3)
+[Video Explanation](https://www.youtube.com/watch?v=p6u7n_BPcVw&list=PL8598C97BA1D871C1&index=3)
 
 **Strong naming an assembly or Signing an assembly with strong name.**  
   
@@ -143,7 +143,7 @@ If the assembly is not signed with private/public key pair, the assembly is weak
 
 ## What is GAC. How and when to install an assembly into GAC 
 
-(https://www.youtube.com/watch?v=FYmRrEYyhCM&list=PL8598C97BA1D871C1&index=4)
+[Video Explanation](https://www.youtube.com/watch?v=FYmRrEYyhCM&list=PL8598C97BA1D871C1&index=4)
 
 **GAC**  stands for  **Global Assembly Cache**  and contains strong named assemblies. Assemblies in the GAC can be shared by all applications running on that machine, without having to copy the assembly locally. It is recommended to install an assembly into GAC, only when required and shared by applications, otherwise they should be kept private.  You shouldn't add an assembly into the GAC, if you wish to deploy your application to another machine using XCopy deployment.  This is because in XCopy deployment, we only copy the application files to the target machine and not the GAC contents. XCopy deployment is simply copying files from one location to another.
 
@@ -207,8 +207,42 @@ Let us try and understand DLL HELL problem with an example. Please refer to the 
   
 So, DLL HELL is a problem where one application will install a new version of the shared component that is not backward compatible with the version already on the machine, causing all the other existing applications that rely on the shared component to break. With .NET versioning we donot have DLL HELL problem any more.
 
+## How is DLL hell problem solved
 
+[Video Explanation](https://www.youtube.com/watch?v=3bsTlGSSdsA&list=PL8598C97BA1D871C1&index=7)
+  
+In short, the dll hell problem is solved in .NET by signing the shared assemblies with strong name.  [Please follow this article, to understand the process of strong naming an assembly.](http://venkataspinterview.blogspot.com/2011/06/what-is-process-for-strong-naming.html)  
+  
+In dot net all the shared assemblies are usually in the GAC. GAC stands for Global Assembly Cache. The path for GAC is  **C:\[OperatingSystemDirectory]\assembly**. For example on my computer the path is  **C:\WINDOWS\assembly**. The image below shows the shared assemblies in the GAC.  
+
+  
+![](http://3.bp.blogspot.com/-3h9wj4-LqZU/TeaQG75xBjI/AAAAAAAAAGo/j6cSV-ZZHsA/s1600/GAC.png)
+
+  
+Only strong named assemblies can be copied into GAC. Strong named assemblies in .NET has 4 pieces in its name as listed below.  
+**1.**  Simple Textual Name  
+**2.**  Version Number  
+**3.**  Culture  
+**4.**  Public Key Token  
+  
+  
+All these four pieces put together, is called as the fully qualified name of the assembly. In the GAC image above  **Accessibility assembly** has a  **version of 2.0.0.0**.  
+  
+  
+**Now consider the example below:**  
+**1**. I have 2 applications,  **Application - A1**  and  **Application - A2**  which relies on the shared assembly  **Accessibility.dll (Version 2.0.0.0)**  as shown in the image below.  
+
+  
+![](http://4.bp.blogspot.com/-Wy2MvPARtTA/TeaROJ-kFYI/AAAAAAAAAGs/kQODaRaugfQ/s1600/Dll+Hell+Solved.png)
+
+  
+**2.**  Now, I have a latest version of  **Application - A2**  available on the internet.  
+**3.**  I download the latest version of  **A2**  and install it on my machine.  
+**4.**  This new installation copies a newer version of  **Accessibility.dll** into the GAC with version  **3.0.0.0.**  
+**5.**  So, in the GAC we now have  **2 versions of Accessibility.dll.**  
+**6.**  **Application - A1**  continues to use  **Accessibility.dll (version 2.0.0.0)**  and  **Application - A2 uses Accessibility.dll (version 3.0.0.0)**  
+**7.**  So, now the assemblies are able to reside side by side in the GAC. For this reason dot net assemblies are also said to be supporting  **side by side execution.**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExNDQyNjM5MywtODYxMTkyMTc0LDIzNT
-kzOTYxNiwtMTcxMDYzMjQ2MV19
+eyJoaXN0b3J5IjpbLTE0OTUzNDAxMTcsLTg2MTE5MjE3NCwyMz
+U5Mzk2MTYsLTE3MTA2MzI0NjFdfQ==
 -->
