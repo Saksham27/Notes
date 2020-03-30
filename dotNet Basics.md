@@ -1,6 +1,6 @@
 ## .NET Program Execution
 
-(https://www.youtube.com/watch?v=ruf4U9_Rbss&list=PL8598C97BA1D871C1&index=1)
+[Video Explanation](https://www.youtube.com/watch?v=ruf4U9_Rbss&list=PL8598C97BA1D871C1&index=1)
 
 Let us first understand how VB6 or C++ programs (Non Dotnet applications) used to execute.  
 We know that computers only understand machine level code. Machine level code is also called as native or binary code. So, when we execute a VB6 or C++ program, the respective language compiler, compiles the respective language source code into native code, which can then be understood by the underlying operating system and hardware. This process is depicted in the image below.   
@@ -215,9 +215,7 @@ In short, the dll hell problem is solved in .NET by signing the shared assemblie
   
 In dot net all the shared assemblies are usually in the GAC. GAC stands for Global Assembly Cache. The path for GAC is  **C:\[OperatingSystemDirectory]\assembly**. For example on my computer the path is  **C:\WINDOWS\assembly**. The image below shows the shared assemblies in the GAC.  
 
-  
-![](http://3.bp.blogspot.com/-3h9wj4-LqZU/TeaQG75xBjI/AAAAAAAAAGo/j6cSV-ZZHsA/s1600/GAC.png)
-
+ (http://3.bp.blogspot.com/-3h9wj4-LqZU/TeaQG75xBjI/AAAAAAAAAGo/j6cSV-ZZHsA/s1600/GAC.png)
   
 Only strong named assemblies can be copied into GAC. Strong named assemblies in .NET has 4 pieces in its name as listed below.  
 **1.**  Simple Textual Name  
@@ -243,6 +241,6 @@ All these four pieces put together, is called as the fully qualified name of the
 **6.**  **Application - A1**  continues to use  **Accessibility.dll (version 2.0.0.0)**  and  **Application - A2 uses Accessibility.dll (version 3.0.0.0)**  
 **7.**  So, now the assemblies are able to reside side by side in the GAC. For this reason dot net assemblies are also said to be supporting  **side by side execution.**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTUzNDAxMTcsLTg2MTE5MjE3NCwyMz
-U5Mzk2MTYsLTE3MTA2MzI0NjFdfQ==
+eyJoaXN0b3J5IjpbLTg4NDEyODg4NCwtODYxMTkyMTc0LDIzNT
+kzOTYxNiwtMTcxMDYzMjQ2MV19
 -->
