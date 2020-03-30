@@ -1,5 +1,7 @@
 ## .NET Program Execution
 
+(https://www.youtube.com/watch?v=ruf4U9_Rbss&list=PL8598C97BA1D871C1&index=1)
+
 Let us first understand how VB6 or C++ programs (Non Dotnet applications) used to execute.  
 We know that computers only understand machine level code. Machine level code is also called as native or binary code. So, when we execute a VB6 or C++ program, the respective language compiler, compiles the respective language source code into native code, which can then be understood by the underlying operating system and hardware. This process is depicted in the image below.   
 
@@ -36,6 +38,8 @@ The native code is not stored permanently anywhere, after we close the program t
 .NET program is similar to java program execution. In java we have byte codes and JVM (Java Virtual Machine), where as in .NET we Intermediate Language and CLR (Common Language Runtime)
 
 ## ILDASM and ILASM 
+
+(https://www.youtube.com/watch?v=D_1Op4TBM-Y&list=PL8598C97BA1D871C1&index=2)
 
 From Part 1 of DotNet basics videos, we understood that, compiling any .NET application would produce an assembly. Assemblies have an extension of .DLL or .EXE. For example if you compile a windows or Console application, you get a .EXE, where as when we compile a web or Class library project we get a .DLL.  [Please watch Part 1, if you haven't done so already.](http://csharp-video-tutorials.blogspot.com/2012/07/net-program-execution-part-1.html)
 
@@ -183,6 +187,9 @@ gacutil -u ClassLibrary,Version=1.0.0.0,PublicKeyToken=eeaabf36d7783129
 **4.**  If the assembly is not found,  the application terminates with error.
 
 ## DLL Hell
+
+[Video Explanation](https://youtu.be/ZNeAmskh-pc)
+
 Let us try and understand DLL HELL problem with an example. Please refer to the image below.  [If you want to know how dll hell problem is solved in .net, you can read this article.](http://venkataspinterview.blogspot.com/2011/06/how-is-dll-hell-problem-solved-in-net.html)  
   
 
@@ -204,6 +211,6 @@ Let us try and understand DLL HELL problem with an example. Please refer to the 
   
 So, DLL HELL is a problem where one application will install a new version of the shared component that is not backward compatible with the version already on the machine, causing all the other existing applications that rely on the shared component to break. With .NET versioning we donot have DLL HELL problem any more.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MzcyOTU2MiwtODYxMTkyMTc0LDIzNT
-kzOTYxNiwtMTcxMDYzMjQ2MV19
+eyJoaXN0b3J5IjpbODE4NTQwNzA0LC04NjExOTIxNzQsMjM1OT
+M5NjE2LC0xNzEwNjMyNDYxXX0=
 -->
