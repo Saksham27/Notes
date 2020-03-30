@@ -137,6 +137,7 @@ If the assembly is not signed with private/public key pair, the assembly is weak
 
 ## What is GAC. How and when to install an assembly into GAC 
 
+
 **GAC**  stands for  **Global Assembly Cache**  and contains strong named assemblies. Assemblies in the GAC can be shared by all applications running on that machine, without having to copy the assembly locally. It is recommended to install an assembly into GAC, only when required and shared by applications, otherwise they should be kept private.  You shouldn't add an assembly into the GAC, if you wish to deploy your application to another machine using XCopy deployment.  This is because in XCopy deployment, we only copy the application files to the target machine and not the GAC contents. XCopy deployment is simply copying files from one location to another.
 
   
@@ -172,7 +173,7 @@ gacutil -u ClassLibrary,Version=1.0.0.0,PublicKeyToken=eeaabf36d7783129
   
 **Note:**  Please make sure there are no spaces between Comma(,) and the words "Version" and PublicKeyToken, otherwise you get an error stating  Unknown option: Version=1.0.0.0.  Also, don't specify the assembly extension (.dll or .exe) when uninstalling, otherwise the assembly will not be uninstalled. You will just get a message stating  Number of assemblies uninstalled = 0
 
-### How .NET finds the assemblies during program execution - Part 5
+## How .NET finds the assemblies during program execution - Part 5
 
 [Video Explanation](https://youtu.be/wIPyv07DIOY)
   
@@ -181,6 +182,6 @@ gacutil -u ClassLibrary,Version=1.0.0.0,PublicKeyToken=eeaabf36d7783129
 **3.**  If the assembly is not found in the GAC, and if there is a .config file, then .NET searches the location in the cofiguration file, else .NET searches directory containing the executable (.EXE)  
 **4.**  If the assembly is not found,  the application terminates with error.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTM4OTEzNSwyMzU5Mzk2MTYsLTE3MT
+eyJoaXN0b3J5IjpbLTg2MTE5MjE3NCwyMzU5Mzk2MTYsLTE3MT
 A2MzI0NjFdfQ==
 -->
