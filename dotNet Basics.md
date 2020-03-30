@@ -215,7 +215,7 @@ In short, the dll hell problem is solved in .NET by signing the shared assemblie
   
 In dot net all the shared assemblies are usually in the GAC. GAC stands for Global Assembly Cache. The path for GAC is  **C:\[OperatingSystemDirectory]\assembly**. For example on my computer the path is  **C:\WINDOWS\assembly**. The image below shows the shared assemblies in the GAC.  
 
- (http://3.bp.blogspot.com/-3h9wj4-LqZU/TeaQG75xBjI/AAAAAAAAAGo/j6cSV-ZZHsA/s1600/GAC.png)
+ ![](http://3.bp.blogspot.com/-3h9wj4-LqZU/TeaQG75xBjI/AAAAAAAAAGo/j6cSV-ZZHsA/s1600/GAC.png)
   
 Only strong named assemblies can be copied into GAC. Strong named assemblies in .NET has 4 pieces in its name as listed below.  
 **1.**  Simple Textual Name  
@@ -241,6 +241,6 @@ All these four pieces put together, is called as the fully qualified name of the
 **6.**  **Application - A1**  continues to use  **Accessibility.dll (version 2.0.0.0)**  and  **Application - A2 uses Accessibility.dll (version 3.0.0.0)**  
 **7.**  So, now the assemblies are able to reside side by side in the GAC. For this reason dot net assemblies are also said to be supporting  **side by side execution.**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4NDEyODg4NCwtODYxMTkyMTc0LDIzNT
-kzOTYxNiwtMTcxMDYzMjQ2MV19
+eyJoaXN0b3J5IjpbLTEzNTA1OTM5NDEsLTg2MTE5MjE3NCwyMz
+U5Mzk2MTYsLTE3MTA2MzI0NjFdfQ==
 -->
